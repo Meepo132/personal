@@ -130,60 +130,72 @@ export default function Portfolio() {
       </nav>
 
       {/* --- Hero Section --- */}
-      <header id="home" className="relative w-full h-screen border-b border-black/5 dark:border-white/5 overflow-hidden flex items-center">
-        {/* Abstract Background Decor */}
+      <header id="home" className="relative w-full min-h-screen border-b border-black/5 dark:border-white/5 overflow-hidden flex items-center pt-14 md:pt-0">
         <div className="absolute top-20 right-[-100px] w-[500px] h-[500px] opacity-[0.05] dark:opacity-[0.03] text-blue-500 z-0">
           <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-current stroke-[0.5]"><circle cx="50" cy="50" r="48" strokeDasharray="5 5" /><path d="M50 2L98 50L50 98L2 50Z" /></svg>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 relative z-10 pt-20 w-full">
-          <div className="flex-1 space-y-8">
-            <div className="flex items-center gap-4">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10 w-full py-12 md:py-20">
+
+          {/* 1. Text Content Section */}
+          <div className="flex-1 space-y-6 md:space-y-8 text-center md:text-left order-2 md:order-1">
+            <div className="flex items-center justify-center md:justify-start gap-4">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-500 flex items-center gap-2">
-                <span className="w-8 h-[1px] bg-blue-500"></span> Discovery & Innovation
+                <span className="hidden md:block w-8 h-[1px] bg-blue-500"></span> Discovery & Innovation
               </span>
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
+            <h2 className="text-[40px] leading-[1.1] md:text-7xl font-bold text-gray-900 dark:text-white tracking-tight">
               DevOps Engineer <br />
               <span className="bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">& Full-Stack Developer</span>
             </h2>
 
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0">
               I'm <span className="text-gray-900 dark:text-white font-semibold">Hein Zayar Kyaw.</span> Specializing in building scalable, secure, and user-centric web applications with over 3+ years of experience.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6">
-              <a href="/Resume.pdf" download className="flex items-center gap-3 bg-blue-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-blue-500 transition-all shadow-lg active:scale-95 whitespace-nowrap group">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
+              <a
+                href="/my_cv.pdf"
+                download="hein_zayar_kyaw_resume.pdf"
+                className="flex items-center gap-3 bg-blue-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-blue-500 transition-all shadow-lg active:scale-95 whitespace-nowrap group w-full sm:w-auto justify-center"
+              >
                 <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
                 <span>Download Resume</span>
               </a>
 
-              {/* Skill Icons in Hero */}
+              {/* Skill Icons */}
               <div className="flex items-center gap-2 p-1.5 rounded-full border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.01]">
                 {['react', 'nextjs', 'typescript', 'nodejs', 'docker', 'kubernetes'].map((tech) => (
-                  <div key={tech} className="group/icon relative w-10 h-10 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-[#0a0a0a] flex items-center justify-center p-2 hover:border-blue-500 transition-all cursor-help">
+                  <div key={tech} className="group/icon relative w-9 h-9 md:w-10 md:h-10 rounded-full border border-black/10 dark:border-white/10 bg-white flex items-center justify-center p-2 hover:border-blue-500 transition-all cursor-help">
                     <img src={`/tech/${tech}.svg`} alt={tech} className="w-full h-full object-contain opacity-60 group-hover/icon:opacity-100 transition-all" />
-                    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-gray-800 text-white text-[10px] opacity-0 group-hover/icon:opacity-100 transition-all pointer-events-none capitalize">
-                      {tech}
-                    </span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Hero Image Holder */}
-          <div className="flex-1 relative aspect-square hidden md:flex items-center justify-center">
-            <div className="absolute inset-0 rounded-full bg-blue-500 opacity-[0.05] blur-[80px] animate-pulse"></div>
-            <div className="relative w-[85%] h-[85%] rounded-full border border-black/5 dark:border-white/10 p-4 z-10 overflow-hidden">
-              <div className="w-full h-full rounded-full overflow-hidden bg-gray-100 dark:bg-[#111] border border-black/5 dark:border-white/5">
-                <img src="/image_2.png" alt="Hein" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+
+          <div className="flex-1 relative w-full aspect-square flex items-center justify-center order-1 md:order-2">
+            {/* Background Glow Effect */}
+            <div className="absolute inset-0 rounded-full bg-blue-500 opacity-[0.08] blur-[80px] animate-pulse"></div>
+
+            {/* Image Circle Container */}
+            <div className="relative w-[85%] h-[85%] md:w-[90%] md:h-[90%] rounded-full border border-black/5 dark:border-white/10 p-2 md:p-4 z-10 overflow-hidden shadow-2xl">
+              <div className="w-full h-full rounded-full overflow-hidden bg-gray-100 dark:bg-[#0a0a0a] border border-black/5 dark:border-white/5">
+                <img
+                  src="/image_2.png"
+                  alt="Hein"
+                  className="w-full h-full object-cover scale-110 translate-y-2 hover:scale-125 transition-transform duration-700"
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-blue-500 animate-bounce"><ChevronsDown size={28} /></div>
+
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-blue-500 animate-bounce hidden md:block">
+          <ChevronsDown size={28} />
+        </div>
       </header>
 
       <main className="max-w-6xl mx-auto px-6 py-24">
@@ -268,25 +280,26 @@ export default function Portfolio() {
 
             {/* UCLan Degree Card - Now with Hover! */}
             <div className="p-8 rounded-[2.5rem] border border-gray-100 dark:border-white/10 bg-white dark:bg-[#0a0a0a] shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 group flex flex-col justify-center cursor-default">
-              <span className="text-[11px] font-mono text-cyan-600 dark:text-blue-500 font-bold tracking-[0.2em] uppercase">2023 — 2026</span>
-              <h4 className="text-xl font-bold text-cyan-600 dark:text-blue-500 mt-3 leading-tight group-hover:scale-[1.01] transition-transform origin-left">
-                BSc (Hons) Cybersecurity and Networking
+              <span className="text-[11px] font-mono text-cyan-600 dark:text-cyan-500 font-bold tracking-[0.2em] uppercase">2024 — 2026</span>
+              <h4 className="text-xl font-bold text-white-600 dark:text-white-500 mt-3 leading-tight group-hover:scale-[1.01] group-hover:text-blue-600 transition-transform origin-left">
+                NCC Level-5 Diploma in Computing(Cybersecurity)
               </h4>
-              <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm font-medium">University of Central Lancashire (UCLan)</p>
+              <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm font-medium">Twinkle College</p>
+              {/* <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm font-medium">University of Central Lancashire (UCLan)</p> */}
             </div>
 
             {/* MERN Certification Card */}
             <div className="p-8 rounded-[2.5rem] border border-gray-100 dark:border-white/10 bg-white dark:bg-[#0a0a0a] shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 group flex flex-col justify-center cursor-default">
               <span className="text-[11px] font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-[0.2em] font-bold">Certification</span>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mt-3 group-hover:text-blue-600 transition-colors">
-                MERN Stack Development
+                MERN Stack Web Development
               </h4>
               <p className="text-gray-500 dark:text-gray-400 mt-1 text-sm font-medium">WTC Technology</p>
             </div>
 
             {/* DevOps Certification Card */}
             <div className="p-8 rounded-[2.5rem] border border-gray-100 dark:border-white/10 bg-white dark:bg-[#0a0a0a] shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 group flex flex-col justify-center cursor-default">
-              <span className="text-[11px] font-mono text-cyan-600 dark:text-blue-500 uppercase tracking-[0.2em] font-bold">Certification</span>
+              <span className="text-[11px] font-mono text-cyan-600 dark:text-cyan-500 uppercase tracking-[0.2em] font-bold">Certification</span>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mt-3 group-hover:text-blue-600 transition-colors">
                 DevOps
               </h4>
@@ -366,9 +379,9 @@ export default function Portfolio() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Movie Streaming Website", tech: ["React", "Redux", "Shadcn"], image: "/image_1.png" },
-              { title: "Hotel Management", tech: ["React", "Tanstack", "AWS"], image: "/image_3.png" },
-              { title: "Coffee Shop Website", tech: ["NextJS", "Tailwind", "Azure"], image: "/image_4.png" }
+              { title: "Movie Streaming Website", tech: ["React", "Redux", "Shadcn", "Node.js", "Express", "MongoDB"], image: "/image_1.png" },
+              { title: "Hotel Management", tech: ["React", "NextJS", "Tanstack", "TypeScript", "Node.js", "AWS"], image: "/image_3.png" },
+              { title: "Coffee Shop Website", tech: ["React", "NextJS", "Tailwind", "TypeScript", "Node.js", "MogoDB"], image: "/image_4.png" }
             ].map((project, index) => (
               <div key={index} className="flex flex-col bg-white dark:bg-[#0a0a0a] border border-black/5 dark:border-white/10 rounded-[2.5rem] overflow-hidden group hover:border-blue-500/50 hover:-translate-y-3 transition-all duration-500 shadow-xl">
                 <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-white/5">
@@ -382,7 +395,7 @@ export default function Portfolio() {
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <a href="#" className="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-xs font-bold transition-all shadow-lg active:scale-95">Demo</a>
+                    <a href="https://pyazatyone.com/" className="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-xs font-bold transition-all shadow-lg active:scale-95">Demo</a>
                     <a href="#" className="flex-1 text-center bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 text-gray-900 dark:text-white py-3 rounded-xl text-xs font-bold transition-all">Code</a>
                   </div>
                 </div>
@@ -392,7 +405,7 @@ export default function Portfolio() {
         </section>
 
         {/* --- Contact Section --- */}
-        <section id="contact" className="py-24 scroll-mt-20">
+        {/* <section id="contact" className="py-24 scroll-mt-20">
           <div className="max-w-xl mx-auto">
             <div className="bg-white dark:bg-[#111] rounded-[3rem] p-12 shadow-2xl border border-black/5 dark:border-white/5 flex flex-col items-center text-center group transition-all duration-500 hover:shadow-blue-500/10">
               <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tighter">Get In Touch</h2>
@@ -401,6 +414,36 @@ export default function Portfolio() {
                 <Mail size={22} className="group-hover/mail:rotate-12 transition-transform" />
                 <span className="text-[17px] font-bold">heinzeyarkyaw2017@gmail.com</span>
               </a>
+            </div>
+          </div>
+        </section> */}
+        <section id="contact" className="py-24 scroll-mt-20">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="bg-white dark:bg-[#0a0a0a] rounded-[3rem] p-12 shadow-2xl border border-black/5 dark:border-white/5 flex flex-col items-center text-center group transition-all duration-500">
+              <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tighter">Get In Touch</h2>
+              <p className="text-gray-500 dark:text-gray-400 mb-10 font-medium">Have a project in mind or just want to say hi?</p>
+
+              <div className="w-full flex flex-wrap items-center justify-center gap-4">
+
+                {/* Email Button */}
+                <a href="mailto:heinzeyarkyaw2017@gmail.com" className="flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl transition-all hover:bg-blue-500 shadow-lg active:scale-95 group/mail min-w-[200px] justify-center">
+                  <Mail size={20} className="group-hover/mail:rotate-12 transition-transform" />
+                  <span className="font-bold">Email Me</span>
+                </a>
+
+                {/* GitHub Button */}
+                <a href="https://github.com" target="_blank" className="flex items-center gap-3 bg-gray-900 dark:bg-white/10 text-white px-8 py-4 rounded-2xl transition-all hover:bg-black dark:hover:bg-white/20 shadow-lg active:scale-95 group/gh min-w-[160px] justify-center">
+                  {/* <Github size={20} className="group-hover/gh:scale-110 transition-transform" /> */}
+                  <span className="font-bold">GitHub</span>
+                </a>
+
+                {/* LinkedIn Button */}
+                <a href="https://linkedin.com" target="_blank" className="flex items-center gap-3 bg-[#0077b5] text-white px-8 py-4 rounded-2xl transition-all hover:opacity-90 shadow-lg active:scale-95 group/in min-w-[160px] justify-center">
+                  {/* <Linkedin size={20} className="group-hover/in:scale-110 transition-transform" /> */}
+                  <span className="font-bold">LinkedIn</span>
+                </a>
+
+              </div>
             </div>
           </div>
         </section>
