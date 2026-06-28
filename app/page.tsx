@@ -82,7 +82,7 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full z-[100] bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent tracking-tighter cursor-default">
-            HEIN
+            Matt
           </div>
           <div className="hidden md:flex items-center gap-8 text-[14px] font-medium">
             {navLinks.map((link) => (
@@ -151,7 +151,7 @@ export default function Portfolio() {
             </h2>
 
             <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0">
-              I'm <span className="text-gray-900 dark:text-white font-semibold">Hein Zayar Kyaw.</span> Specializing in building scalable, secure, and user-centric web applications with over 3+ years of experience.
+              I'm <span className="text-gray-900 dark:text-white font-semibold">Matt.</span> Specializing in building scalable, secure, and user-centric web applications with over 3+ years of experience.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
