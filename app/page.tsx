@@ -212,12 +212,12 @@ export default function Portfolio() {
                 {/* <p>I am a <span className="text-blue-600 dark:text-blue-400 font-medium">Software Engineer</span> focusing on the <span className="text-gray-900 dark:text-white font-semibold">MERN stack</span> and Cloud infrastructure.</p>
                 <p>Coming from a background in Cybersecurity, I prioritize system integrity and rapid deployment through automated DevOps pipelines.</p> */}
                 <p>
-                  My name is <span className="text-blue font-semibold">Hein Zayar Kyaw.</span> I am a
+                  My name is <span className="text-blue font-semibold">Matt.</span> I am a
                   <span className="text-blue-400 font-medium"> Software Engineer</span> with a passion for building
                   scalable, secure, and user-centric web applications.
                 </p>
                 <p>
-                  With over <span className="text-blue-400">3+ years of experience</span> in full-stack development,
+                  With over <span className="text-blue-400">5+ years of experience</span> in full-stack development,
                   I specialize in the <span className="text-blue-400">MERN stack</span> (MongoDB, Express, React, Node.js).
                   I love transforming complex logic into clean, maintainable code while ensuring a seamless user experience.
                 </p>
